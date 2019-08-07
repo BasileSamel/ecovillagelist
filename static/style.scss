@@ -292,7 +292,7 @@ header {
     }
 
     h2 {
-        font-size: 3.6rem;
+        font-size: 3.3rem;
         font-weight: normal;
         margin: 0;
     }
@@ -467,8 +467,8 @@ footer {
             position: relative;
             height: 100vh;
             max-height: 560px;
-            background: url("assets/img/bg.svg") no-repeat right -3.2rem top 3rem;
-            background-size: auto 400px;
+            background: url("assets/img/bg.svg") no-repeat right -4.2rem top;
+            background-size: auto 500px;
             padding-bottom: $gap*2;
         }
     }
