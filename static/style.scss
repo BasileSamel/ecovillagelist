@@ -326,29 +326,56 @@ aside {
     z-index: 3;
     min-height: 400px;
 
-    > ul {
+    #main-filters {
         @extend %shadow;
         border-radius: $radius;
-        list-style-type: none;
-        margin: 0;
-        padding: $gap;
-        display: grid;
-        grid-row-gap: $gap*1.2;
+        border-top: 4px solid $c-bg-dark;
         position: -webkit-sticky;
         position: sticky;
         top: $gap;
-        border-top: 4px solid $c-bg-dark;
+        padding: $gap 0;
+        font-size: 0.875rem;
+        font-variant-numeric: tabular-nums;
 
-        &:not(#main-filters)    {
-            grid-row-gap: $gap/1.4;
+        ul    {
+            grid-row-gap: $gap/2;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
 
-            > li:not(:last-of-type)  {
-                border-bottom: 1px solid $c-border;
-                padding-bottom: $gap/1.4;
+            li  {
+                padding: 0 $gap;
+
+                &:not(:last-of-type)    {
+                    border-bottom: 1px dashed $c-border;
+                    padding-bottom: $gap/2;
+                }
             }
         }
 
-        h3 {
+        .toggle {
+            @extend %toggle;
+            border-radius: $radius;
+            display: inline-block;
+            border: 1px solid $c-green;
+            text-transform: uppercase;
+            font-size: 0.688rem;
+            letter-spacing: 1px;
+            padding: 3px 3px 3px 10px;
+            line-height: 1;
+        }
+
+        .toggle-content {
+            display: none;
+        }
+
+        .toggle-content.is-visible {
+            display: block;
+            margin-top: $gap/4;
+        }
+
+        h3, h4 {
             margin: 0 0 $gap/4;
             padding: 0;
             text-transform: uppercase;
@@ -366,8 +393,8 @@ aside {
         }
 
         input[type="range"] {
+            margin-right: $gap/2;
             width: 100%;
-            margin: 0 8px 0 0;
         }
 
         select {

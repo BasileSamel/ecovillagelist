@@ -11,7 +11,7 @@ $gap: 2rem;
 $c-green: hsla(140, 72%, 44%, 1);
 $c-title: hsla(14, 23%, 18%, 1);
 $c-text: hsla(14, 3%, 42%, 1);
-$c-border: hsla(0, 0%, 20%, 0.1);
+$c-border: hsla(0, 0%, 20%, 0.2);
 
 // Background colors
 $c-bg: hsla(45, 46%, 100%, 1);
@@ -49,6 +49,13 @@ $breakpoint-mobile: 960px;
     background-repeat: no-repeat;
     background-position: right 4px center;
     background-size: auto 60%;
+}
+
+%toggle {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIgMThjMS42NTcgMCAzIDEuMzQzIDMgM3MtMS4zNDMgMy0zIDMtMy0xLjM0My0zLTMgMS4zNDMtMyAzLTN6bTAtOWMxLjY1NyAwIDMgMS4zNDMgMyAzcy0xLjM0MyAzLTMgMy0zLTEuMzQzLTMtMyAxLjM0My0zIDMtM3ptMC05YzEuNjU3IDAgMyAxLjM0MyAzIDNzLTEuMzQzIDMtMyAzLTMtMS4zNDMtMy0zIDEuMzQzLTMgMy0zeiIgZmlsbD0iaHNsYSgxNDAsIDcyJSwgMzQlLCAxKSIvPjwvc3ZnPg==");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: auto 9px;
 }
 
 %shadow {
