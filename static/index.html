@@ -50,144 +50,142 @@
     <main class="flex-grow">
         <div class="container grid-sc">
             <aside>
-                <div id="main-filters">
-                    <ul>
-                        <li>
-                            <h3>Location</h3>
-                            <select id="selectContinent">
-                                <option>Continent</option>
-                                <option>Africa</option>
-                                <option>Asia</option>
-                                <option>Australia/Oceania</option>
-                                <option>Europe</option>
-                                <option>North America</option>
-                                <option>South America</option>
-                            </select>
-                            <select id="selectCountry">
-                                <option>Country</option>
-                                <option>Africa</option>
-                                <option>Asia</option>
-                                <option>Australia/Oceania</option>
-                                <option>Europe</option>
-                                <option>North America</option>
-                                <option>South America</option>
-                            </select>
-                        </li>
-                        <li>
-                            <h3>Demographics</h3>
-                            <select id="selectLanguage">
-                                <option>Language</option>
-                                <option>English</option>
-                                <option>French</option>
-                                <option>Portuguese</option>
-                                <option>Spanish</option>
-                            </select>
+                <ul id="main-filters">
+                    <li>
+                        <h3>Location</h3>
+                        <select id="selectContinent">
+                            <option>Continent</option>
+                            <option>Africa</option>
+                            <option>Asia</option>
+                            <option>Australia/Oceania</option>
+                            <option>Europe</option>
+                            <option>North America</option>
+                            <option>South America</option>
+                        </select>
+                        <select id="selectCountry">
+                            <option>Country</option>
+                            <option>Africa</option>
+                            <option>Asia</option>
+                            <option>Australia/Oceania</option>
+                            <option>Europe</option>
+                            <option>North America</option>
+                            <option>South America</option>
+                        </select>
+                    </li>
+                    <li>
+                        <h3>Demographics</h3>
+                        <select id="selectLanguage">
+                            <option>Language</option>
+                            <option>English</option>
+                            <option>French</option>
+                            <option>Portuguese</option>
+                            <option>Spanish</option>
+                        </select>
 
-                            <select id="selectDiet">
-                                <option>Dietary Preferences</option>
-                                <option>Omnivorous</option>
-                                <option>Paleo</option>
-                                <option>Local</option>
-                                <option>Vegetarian</option>
-                                <option>Vegan</option>
-                            </select>
+                        <select id="selectDiet">
+                            <option>Dietary Preferences</option>
+                            <option>Omnivorous</option>
+                            <option>Paleo</option>
+                            <option>Local</option>
+                            <option>Vegetarian</option>
+                            <option>Vegan</option>
+                        </select>
 
-                            <label for="inhabitants">Inhabitants</label>
-                            <div class="flex v-center">
-                                <input type="range" name="inhabitants" id="inhabitants" min="1" max="300" value="300"
-                                       oninput="inhabitantsOutput.value = inhabitants.value">
-                                <output name="inhabitantsOutput" id="inhabitantsOutput">300</output>
-                            </div>
+                        <label for="inhabitants">Inhabitants</label>
+                        <div class="flex v-center">
+                            <input type="range" name="inhabitants" id="inhabitants" min="1" max="300" value="300"
+                                   oninput="inhabitantsOutput.value = inhabitants.value">
+                            <output name="inhabitantsOutput" id="inhabitantsOutput">300</output>
+                        </div>
 
-                            <label for="age">Age</label>
-                            <div class="flex v-center">
-                                <input type="range" name="age" id="age" min="1" max="100" value="100"
-                                       oninput="ageOutput.value = age.value">
-                                <output name="ageOutput" id="ageOutput">100</output>
-                            </div>
-                        </li>
-                        <li>
-                            <h3>Scope</h3>
-                            <select id="selectScope">
-                                <option>Education</option>
-                                <option>Research</option>
-                                <option>Art</option>
-                                <option>Spiritual</option>
-                                <option>Religious</option>
-                            </select>
-                        </li>
-                        <li>
-                            <h3>Landscape</h3>
-                            <label><input type="checkbox"/>Urban</label>
-                            <label><input type="checkbox"/>Semi-urban</label>
-                            <label><input type="checkbox"/>Rural</label>
-                        </li>
-                        <li>
-                            <h3>Open to</h3>
-                            <select id="selectOpenTo">
-                                <option>Visitors</option>
-                                <option>New members</option>
-                                <option>Volunteers</option>
-                            </select>
-                        </li>
-                        <li>
-                            <h3>Lodging</h3>
-                            <select id="selectLodging">
-                                <option>Cohousing</option>
-                                <option>Camping</option>
-                            </select>
-                        </li>
-                        <li>
-                            <h4>Resources</h4>
-                            <a class="toggle" href="#selectResources">Toggle options</a>
-                            <div class="toggle-content" id="selectResources">
-                                <label><input type="checkbox"/>Self-produced food</label>
-                                <label><input type="checkbox"/>Renewable energy</label>
-                            </div>
-                        </li>
-                        <li>
-                            <h4>Amenities</h4>
-                            <a class="toggle" href="#selectAmenities">Toggle options</a>
-                            <div class="toggle-content" id="selectAmenities">
-                                <label><input type="checkbox"/>Cellphone service</label>
-                                <label><input type="checkbox"/>Internet</label>
-                                <label><input type="checkbox"/>Community farm</label>
-                                <label><input type="checkbox"/>Gym/sports facilities</label>
-                                <label><input type="checkbox"/>Healthcare facilities</label>
-                                <label><input type="checkbox"/>Large scale kitchen</label>
-                                <label><input type="checkbox"/>Library</label>
-                                <label><input type="checkbox"/>Play areas</label>
-                                <label><input type="checkbox"/>Swimming pond/pool</label>
-                            </div>
-                        </li>
-                        <li>
-                            <h4>Status</h4>
-                            <a class="toggle" href="#selectStatus">Toggle options</a>
-                            <div class="toggle-content" id="selectStatus">
-                                <label><input type="checkbox"/>Forming</label>
-                                <label><input type="checkbox"/>Established</label>
-                                <label><input type="checkbox"/>Founded in</label>
-                                <label><input type="checkbox"/>Disbanded</label>
-                            </div>
-                        </li>
-                        <li>
-                            <h4>Governance</h4>
-                            <a class="toggle" href="#selectGovernance">Toggle options</a>
-                            <div class="toggle-content" id="selectGovernance">
-                                <label><input type="checkbox"/>Income-sharing</label>
-                                <label><input type="checkbox"/>Self-governance</label>
-                            </div>
-                        </li>
-                        <li>
-                            <h4>Built Environment</h4>
-                            <a class="toggle" href="#selectBuiltEnv">Toggle options</a>
-                            <div class="toggle-content" id="selectBuiltEnv">
-                                <label><input type="checkbox"/>Natural Building</label>
-                                <label><input type="checkbox"/>Green Building</label>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+                        <label for="age">Age</label>
+                        <div class="flex v-center">
+                            <input type="range" name="age" id="age" min="1" max="100" value="100"
+                                   oninput="ageOutput.value = age.value">
+                            <output name="ageOutput" id="ageOutput">100</output>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>Scope</h3>
+                        <select id="selectScope">
+                            <option>Education</option>
+                            <option>Research</option>
+                            <option>Art</option>
+                            <option>Spiritual</option>
+                            <option>Religious</option>
+                        </select>
+                    </li>
+                    <li>
+                        <h3>Landscape</h3>
+                        <label><input type="checkbox"/>Urban</label>
+                        <label><input type="checkbox"/>Semi-urban</label>
+                        <label><input type="checkbox"/>Rural</label>
+                    </li>
+                    <li>
+                        <h3>Open to</h3>
+                        <select id="selectOpenTo">
+                            <option>Visitors</option>
+                            <option>New members</option>
+                            <option>Volunteers</option>
+                        </select>
+                    </li>
+                    <li>
+                        <h3>Lodging</h3>
+                        <select id="selectLodging">
+                            <option>Cohousing</option>
+                            <option>Camping</option>
+                        </select>
+                    </li>
+                    <li>
+                        <h4>Resources</h4>
+                        <a class="toggle" href="#selectResources">Toggle options</a>
+                        <div class="toggle-content" id="selectResources">
+                            <label><input type="checkbox"/>Self-produced food</label>
+                            <label><input type="checkbox"/>Renewable energy</label>
+                        </div>
+                    </li>
+                    <li>
+                        <h4>Amenities</h4>
+                        <a class="toggle" href="#selectAmenities">Toggle options</a>
+                        <div class="toggle-content" id="selectAmenities">
+                            <label><input type="checkbox"/>Cellphone service</label>
+                            <label><input type="checkbox"/>Internet</label>
+                            <label><input type="checkbox"/>Community farm</label>
+                            <label><input type="checkbox"/>Gym/sports facilities</label>
+                            <label><input type="checkbox"/>Healthcare facilities</label>
+                            <label><input type="checkbox"/>Large scale kitchen</label>
+                            <label><input type="checkbox"/>Library</label>
+                            <label><input type="checkbox"/>Play areas</label>
+                            <label><input type="checkbox"/>Swimming pond/pool</label>
+                        </div>
+                    </li>
+                    <li>
+                        <h4>Status</h4>
+                        <a class="toggle" href="#selectStatus">Toggle options</a>
+                        <div class="toggle-content" id="selectStatus">
+                            <label><input type="checkbox"/>Forming</label>
+                            <label><input type="checkbox"/>Established</label>
+                            <label><input type="checkbox"/>Founded in</label>
+                            <label><input type="checkbox"/>Disbanded</label>
+                        </div>
+                    </li>
+                    <li>
+                        <h4>Governance</h4>
+                        <a class="toggle" href="#selectGovernance">Toggle options</a>
+                        <div class="toggle-content" id="selectGovernance">
+                            <label><input type="checkbox"/>Income-sharing</label>
+                            <label><input type="checkbox"/>Self-governance</label>
+                        </div>
+                    </li>
+                    <li>
+                        <h4>Built Environment</h4>
+                        <a class="toggle" href="#selectBuiltEnv">Toggle options</a>
+                        <div class="toggle-content" id="selectBuiltEnv">
+                            <label><input type="checkbox"/>Natural Building</label>
+                            <label><input type="checkbox"/>Green Building</label>
+                        </div>
+                    </li>
+                </ul>
             </aside>
 
             <section class="grid-items">
@@ -260,19 +258,19 @@
 </div>
 
 <script>
-    var show = function (elem) {
+    let show = function (elem) {
         elem.classList.add('is-visible');
     };
-    var hide = function (elem) {
+    let hide = function (elem) {
         elem.classList.remove('is-visible');
     };
-    var toggle = function (elem) {
+    let toggle = function (elem) {
         elem.classList.toggle('is-visible');
     };
     document.addEventListener('click', function (event) {
         if (!event.target.classList.contains('toggle')) return;
         event.preventDefault();
-        var content = document.querySelector(event.target.hash);
+        let content = document.querySelector(event.target.hash);
         if (!content) return;
         toggle(content);
     }, false);

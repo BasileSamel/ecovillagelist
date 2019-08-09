@@ -326,7 +326,7 @@ aside {
     z-index: 3;
     min-height: 400px;
 
-    #main-filters {
+    > ul {
         @extend %shadow;
         border-radius: $radius;
         border-top: 4px solid $c-bg-dark;
@@ -336,21 +336,17 @@ aside {
         padding: $gap 0;
         font-size: 0.875rem;
         font-variant-numeric: tabular-nums;
+        grid-row-gap: $gap/2;
+        list-style-type: none;
+        margin: 0;
+        display: grid;
 
-        ul    {
-            grid-row-gap: $gap/2;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: grid;
-
-            li  {
+            > li  {
                 padding: 0 $gap;
 
                 &:not(:last-of-type)    {
                     border-bottom: 1px dashed $c-border;
                     padding-bottom: $gap/2;
-                }
             }
         }
 
