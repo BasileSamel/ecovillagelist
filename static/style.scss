@@ -371,7 +371,7 @@ aside {
             margin-top: $gap/4;
         }
 
-        h3, h4 {
+        h4, option:first-of-type {
             margin: 0 0 $gap/4;
             padding: 0;
             text-transform: uppercase;
@@ -382,10 +382,8 @@ aside {
             font-weight: bold;
         }
 
-        label {
+        label   {
             display: block;
-            margin: 0;
-            font-size: 0.875rem;
         }
 
         input[type="range"] {
