@@ -56,7 +56,6 @@ class App extends React.Component {
                     <nav>
                         <Link to="/page">Page</Link>
                     </nav>
-
                 </header>
 
                 <Switch>
@@ -74,7 +73,6 @@ class App extends React.Component {
                     </div>
                     <div><a href="https://twitter.com/EcovillageList">Twitter</a> &mdash; <Link to="/privacy">Privacy</Link></div>
                 </footer>
-
                 </Router>
             </div>
         );
