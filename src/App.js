@@ -66,10 +66,12 @@ class App extends React.Component {
                 </Switch>
 
                 <footer className="grid">
-                    <div className="flex-grow">Created with <span role="img" aria-label="heart">💚️</span> by <a href="https://basilesamel.com/">Basile</a>
+                    <div className="flex-grow">
+                        Created with <span role="img" aria-label="heart">💚️</span> by <a href="https://basilesamel.com/">Basile</a>
                         <span>&middot;</span><a href="https://patriciapires.github.io/">Patricia</a>
                         <span>&middot;</span><a href="https://miguelpiedrafita.com/">Miguel</a>
-                        <span>&middot;</span><a href="https://sava.io/">Alina</a></div>
+                        <span>&middot;</span><a href="https://sava.io/">Alina</a>
+                    </div>
                     <div><a href="https://twitter.com/EcovillageList">Twitter</a> &mdash; <Link to="/privacy">Privacy</Link></div>
                 </footer>
 
