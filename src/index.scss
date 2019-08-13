@@ -307,7 +307,6 @@ aside {
     > ul {
         @extend %shadow;
         border-radius: $radius;
-        border-top: 4px solid $c-bg-dark;
         position: -webkit-sticky;
         position: sticky;
         top: $gap;
