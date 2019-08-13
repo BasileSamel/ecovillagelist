@@ -423,9 +423,15 @@ footer {
         text-align: right;
     }
 
-    span {
-        font-size: 0.688rem;
-        background: $c-bg;
+    span    {
+        &:first-of-type {
+            font-size: 0.688rem;
+            background: $c-bg;
+        }
+
+        &:not(:first-of-type) {
+            padding: 0 5px;
+        }
     }
 }
 
