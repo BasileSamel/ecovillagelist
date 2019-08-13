@@ -29,11 +29,6 @@ class Page extends React.Component {
                     <p>Hipster ipsum pug adaptogen semiotics, lomo viral umami asymmetrical. Hipster ipsum pug adaptogen semiotics, lomo viral umami asymmetrical. Hipster ipsum pug adaptogen semiotics, lomo viral umami asymmetrical.</p>
                 </div>
             </main>
-
-            <footer className="grid">
-                <div className="flex-grow">Created with <span>💚️</span> by <a href="https://basilesamel.com/">Basile</a> &middot; <a href="https://patriciapires.github.io/">Patricia</a> &middot; <a href="https://miguelpiedrafita.com/">Miguel</a> &middot; <a href="https://sava.io/">Alina</a></div>
-                <div><a href="https://twitter.com/EcovillageList">Twitter</a> &mdash; <a href="#">Privacy</a></div>
-            </footer>
             </>
         );
     }

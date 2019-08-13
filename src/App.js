@@ -1,16 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import Index from './pages/Index';
-import Page from './pages/Page';
-import PageEcovillage from './pages/PageEcovillage';
+import Index from './pages/Index/Index';
+import Page from './pages/Page/Page';
+import PageEcovillage from './pages/PageEcovillage/PageEcovillage';
 
 class App extends React.Component {
     constructor(props){
         super(props);
 
         this.state = {
-
         };
     }
 
@@ -60,9 +59,16 @@ class App extends React.Component {
 
                 </header>
 
-                <Route path="/" exact component={Index} />
+                <Route path="/" exact component={() => <Index ecovillages={this.props.ecovillages} />} />
                 <Route path="/page-ecovillage" component={PageEcovillage} />
                 <Route path="/page" component={Page} />
+
+                <footer className="grid">
+                    <div className="flex-grow">Created with <span role="img" aria-label="heart">💚️</span> by <a href="https://basilesamel.com/">Basile</a> &middot;
+                        <a href="https://patriciapires.github.io/">Patricia</a> &middot; <a href="https://miguelpiedrafita.com/">Miguel</a>
+                        &middot; <a href="https://sava.io/">Alina</a></div>
+                    <div><a href="https://twitter.com/EcovillageList">Twitter</a> &mdash; <Link to="/privacy">Privacy</Link></div>
+                </footer>
 
                 </Router>
             </div>

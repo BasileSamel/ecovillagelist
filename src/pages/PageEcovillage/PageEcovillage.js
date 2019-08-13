@@ -77,11 +77,6 @@ class PageEcovillage extends React.Component {
                     </aside>
                 </div>
             </main>
-
-            <footer className="grid">
-                <div className="flex-grow">Created with <span>💚️</span> by <a href="https://basilesamel.com/">Basile</a> &middot; <a href="https://patriciapires.github.io/">Patricia</a> &middot; <a href="https://miguelpiedrafita.com/">Miguel</a> &middot; <a href="https://sava.io/">Alina</a></div>
-                <div><a href="https://twitter.com/EcovillageList">Twitter</a> &mdash; <a href="#">Privacy</a></div>
-            </footer>
             </>
         );
     }

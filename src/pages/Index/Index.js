@@ -1,21 +1,33 @@
 import React from 'react';
 
+import EcovillageListItem from '../../components/EcovillageListItem/EcovillageListItem';
+
 class Index extends React.Component {
     constructor(props){
         super(props);
 
         this.state = {
-
+            ecovillages: this.props.ecovillages
         };
     }
 
     render(){
+
+        const ecovillages = this.state.ecovillages.map((ecovillage, index) =>
+            <EcovillageListItem
+                key={index}
+                index={index}
+                ecovillage={ecovillage}
+            />
+        );
+
+
         return (
             <>
             <section className="hero">
                 <div className="container flex center columns">
                     <h2>Find <strong>your</strong> ecovillage</h2>
-                    <p>Hipster ipsum pug adaptogen semiotics, lomo viral umami asymmetrical.</p>
+                    <p>Browse, be inspired, fight climate change.</p>
                 </div>
             </section>
 
@@ -161,72 +173,10 @@ class Index extends React.Component {
                     </aside>
 
                     <section className="grid-items">
-                        <div>
-                            <img src="placeholders/placeholder.jpg" alt=""/>
-                            <div>
-                                <h3>Somewhere Nice</h3>
-                                Location, Country
-                            </div>
-                        </div>
-                        <div>
-                            <img src="placeholders/placeholder.jpg" alt=""/>
-                            <div>
-                                <h3>Ecovillage FTW</h3>
-                                Location, Country
-                            </div>
-                        </div>
-                        <div>
-                            <img src="placeholders/placeholder.jpg" alt=""/>
-                            <div>
-                                <h3>A village that is eco</h3>
-                                Location, Country
-                            </div>
-                        </div>
-                        <div>
-                            <img src="placeholders/placeholder.jpg" alt=""/>
-                            <div>
-                                <h3>Naming ecovillages is hard</h3>
-                                Location, Country
-                            </div>
-                        </div>
-                        <div>
-                            <img src="placeholders/placeholder.jpg" alt=""/>
-                            <div>
-                                <h3>Because they're fictitious</h3>
-                                Location, Country
-                            </div>
-                        </div>
-                        <div>
-                            <img src="placeholders/placeholder.jpg" alt=""/>
-                            <div>
-                                <h3>And it's 4:30AM</h3>
-                                Location, Country
-                            </div>
-                        </div>
-                        <div>
-                            <img src="placeholders/placeholder.jpg" alt=""/>
-                            <div>
-                                <h3>Black Mirror</h3>
-                                Location, Country
-                            </div>
-                        </div>
-                        <div>
-                            <img src="placeholders/placeholder.jpg" alt=""/>
-                            <div>
-                                <h3>Superheroes Ecovillage</h3>
-                                Location, Country
-                            </div>
-                        </div>
+                        {ecovillages}
                     </section>
                 </div>
             </main>
-
-            <footer className="grid">
-                <div className="flex-grow">Created with <span role="img" aria-label="heart">💚️</span> by <a href="https://basilesamel.com/">Basile</a> &middot;
-                    <a href="https://patriciapires.github.io/">Patricia</a> &middot; <a href="https://miguelpiedrafita.com/">Miguel</a>
-                    &middot; <a href="https://sava.io/">Alina</a></div>
-                <div><a href="https://twitter.com/EcovillageList">Twitter</a> &mdash; <a href="/privacy">Privacy</a></div>
-            </footer>
             </>
         );
     }
