@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 import Index from './pages/Index/Index';
 import Page from './pages/Page/Page';
@@ -10,6 +10,7 @@ class App extends React.Component {
         super(props);
 
         this.state = {
+            ecovillages: this.props.ecovillages
         };
     }
 
@@ -53,15 +54,16 @@ class App extends React.Component {
                     </form>
 
                     <nav>
-                        <Link to="/page-ecovillage">Page Ecovillage</Link>
                         <Link to="/page">Page</Link>
                     </nav>
 
                 </header>
 
-                <Route path="/" exact component={() => <Index ecovillages={this.props.ecovillages} />} />
-                <Route path="/page-ecovillage" component={PageEcovillage} />
-                <Route path="/page" component={Page} />
+                <Switch>
+                    <Route path="/" exact component={() => <Index ecovillages={this.state.ecovillages} />} />
+                    <Route path="/page" component={Page} />
+                    <Route path="/:slug" component={(match) => <PageEcovillage ecovillages={this.state.ecovillages} match={match.match}/>} />
+                </Switch>
 
                 <footer className="grid">
                     <div className="flex-grow">Created with <span role="img" aria-label="heart">💚️</span> by <a href="https://basilesamel.com/">Basile</a> &middot;

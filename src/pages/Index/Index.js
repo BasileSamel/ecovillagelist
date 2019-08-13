@@ -1,6 +1,6 @@
 import React from 'react';
 
-import EcovillageListItem from '../../components/EcovillageListItem/EcovillageListItem';
+import EcovillageList from '../../components/EcovillageList/EcovillageList';
 
 class Index extends React.Component {
     constructor(props){
@@ -12,14 +12,6 @@ class Index extends React.Component {
     }
 
     render(){
-
-        const ecovillages = this.state.ecovillages.map((ecovillage, index) =>
-            <EcovillageListItem
-                key={index}
-                index={index}
-                ecovillage={ecovillage}
-            />
-        );
 
 
         return (
@@ -172,9 +164,10 @@ class Index extends React.Component {
                         </ul>
                     </aside>
 
-                    <section className="grid-items">
-                        {ecovillages}
-                    </section>
+                    <EcovillageList
+                        ecovillages={this.state.ecovillages}
+                    />
+
                 </div>
             </main>
             </>

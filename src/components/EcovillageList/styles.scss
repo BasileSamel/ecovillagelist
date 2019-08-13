@@ -1,0 +1,27 @@
+@import "../../variables";
+
+.grid-items {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: stretch;
+
+    > a {
+        border-radius: $radius;
+        background: $c-bg;
+        color: lighten($c-text, 16%);
+        font-size: 0.875rem;
+        cursor: pointer;
+
+        img {
+            margin-bottom: $gap/2;
+        }
+
+        div {
+            padding: 0 $gap;
+
+            h3 {
+                margin: 0;
+                font-size: 1.1rem;
+            }
+        }
+    }
+}

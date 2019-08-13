@@ -1,20 +1,17 @@
 import React from 'react';
 
 class PageEcovillage extends React.Component {
-    constructor(props){
-        super(props);
-
-        this.state = {
-
-        };
-    }
-
     render(){
+        const slug = this.props.match.params.slug;
+        const current_ecovillage = this.props.ecovillages.filter((ecovillage) => {
+            return ecovillage.slug === slug;
+        })[0];
+
         return (
             <>
             <section className="hero-page">
                 <div className="container">
-                    <h2>Ecovillage name</h2>
+                    <h2>{current_ecovillage.name}</h2>
                 </div>
             </section>
 
@@ -22,7 +19,7 @@ class PageEcovillage extends React.Component {
                 <div className="container grid-cs">
                     <section>
                         <div className="container page">
-                            <img src="placeholders/placeholder.jpg" alt=""/>
+                            <img src={current_ecovillage.picture} alt=""/>
                             <p>Hipster ipsum pug adaptogen semiotics, lomo viral umami asymmetrical. Hipster ipsum pug adaptogen semiotics, lomo viral umami asymmetrical. Hipster ipsum pug adaptogen semiotics, lomo viral umami asymmetrical. Hipster ipsum pug adaptogen semiotics, lomo viral umami asymmetrical. Hipster ipsum pug adaptogen semiotics, lomo viral umami asymmetrical. Hipster ipsum pug adaptogen semiotics, lomo viral umami asymmetrical.</p>
                             <blockquote>
                                 Hipster ipsum pug adaptogen semiotics, lomo viral umami asymmetrical.
@@ -37,8 +34,8 @@ class PageEcovillage extends React.Component {
                     <aside>
                         <ul>
                             <li>
-                                <h3>Location</h3>
-                                Location, Country
+                                <h3>{current_ecovillage.city}</h3>
+                                {current_ecovillage.city}, {current_ecovillage.country}
                             </li>
                             <li>
                                 <h3>Language(s)</h3>
