@@ -9,7 +9,6 @@
     font-display: swap;
 }
 
-
 @font-face {
     font-family: "Space Grotesk";
     src: url("assets/fonts/SpaceGrotesk-Bold.woff2") format("woff2"),
@@ -241,6 +240,10 @@ header {
     position: relative;
     z-index: 4;
 
+    *   {
+        color: darken($c-green, 10%);
+    }
+
     &::before {
         content: "";
         position: absolute;
@@ -464,8 +467,8 @@ footer {
             position: relative;
             height: 100vh;
             max-height: 560px;
-            background: url("assets/img/bg.svg") no-repeat right -4.2rem top;
-            background-size: auto 480px;
+            background: url("assets/img/bg.svg") no-repeat right top;
+            background-size: auto 460px;
             padding-bottom: $gap*2;
         }
     }
