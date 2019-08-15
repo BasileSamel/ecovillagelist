@@ -59,26 +59,27 @@ class Index extends React.Component {
                                 </select>
 
                                 <select id="selectDiet">
-                                    <option>Dietary Preferences</option>
+                                    <option>Dietary Restrictions</option>
                                     <option>Omnivorous</option>
                                     <option>Paleo</option>
                                     <option>Local</option>
+                                    <option>Organic</option>
+                                    <option>GMO Free</option>
                                     <option>Vegetarian</option>
                                     <option>Vegan</option>
+                                    <option>Opportunivore</option>
+                                    <option>Raw</option>
+                                    <option>Kosher</option>
+                                    <option>Halal</option>
+                                    <option>Dairy-free</option>
+                                    <option>Gluten-free</option>
                                 </select>
 
-                                <label for="inhabitants">Inhabitants</label>
+                                <label for="residents">Residents</label>
                                 <div className="flex v-center">
-                                    <input type="range" name="inhabitants" id="inhabitants" min="1" max="300" value="300"
-                                        oninput="inhabitantsOutput.value = inhabitants.value"/>
-                                    <output name="inhabitantsOutput" id="inhabitantsOutput">300</output>
-                                </div>
-
-                                <label for="age">Age</label>
-                                <div className="flex v-center">
-                                    <input type="range" name="age" id="age" min="1" max="100" value="100"
-                                        oninput="ageOutput.value = age.value"/>
-                                    <output name="ageOutput" id="ageOutput">100</output>
+                                    <input type="range" name="residents" id="residents" min="1" max="300" value="300"
+                                        oninput="residentsOutput.value = residents.value"/>
+                                    <output name="residentsOutput" id="residentsOutput">300</output>
                                 </div>
                             </li>
                             <li>
@@ -96,11 +97,13 @@ class Index extends React.Component {
                                 <label for="selectUrban"><input type="checkbox" id="selectUrban"/>Urban</label>
                                 <label for="selectSemiUrban"><input type="checkbox" id="selectSemiUrban"/>Semi-urban</label>
                                 <label for="selectRural"><input type="checkbox" id="selectRural"/>Rural</label>
+                                <label for="selectMobile"><input type="checkbox" id="selectMobile"/>Mobile</label>
                             </li>
                             <li>
                                 <h4>Lodging</h4>
                                 <select id="selectLodging">
                                     <option>Cohousing</option>
+                                    <option>Building lots</option>
                                     <option>Camping</option>
                                 </select>
                             </li>
@@ -116,7 +119,7 @@ class Index extends React.Component {
                                 <h4>Resources</h4>
                                 <a className="toggle" href="#selectResources">Toggle options</a>
                                 <div className="toggle-content" id="selectResources">
-                                    <label><input type="checkbox"/>Self-produced food</label>
+                                    <label><input type="checkbox"/>Self or shared food production</label>
                                     <label><input type="checkbox"/>Renewable energy</label>
                                 </div>
                             </li>
@@ -126,9 +129,8 @@ class Index extends React.Component {
                                 <div className="toggle-content" id="selectAmenities">
                                     <label><input type="checkbox"/>Cellphone service</label>
                                     <label><input type="checkbox"/>Internet</label>
-                                    <label><input type="checkbox"/>Community farm</label>
+                                    <label><input type="checkbox"/>Community farm/garden</label>
                                     <label><input type="checkbox"/>Gym/sports facilities</label>
-                                    <label><input type="checkbox"/>Healthcare facilities</label>
                                     <label><input type="checkbox"/>Large scale kitchen</label>
                                     <label><input type="checkbox"/>Library</label>
                                     <label><input type="checkbox"/>Play areas</label>
