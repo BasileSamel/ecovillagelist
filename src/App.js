@@ -34,7 +34,7 @@ class App extends React.Component {
             toggle(content);
         }, false);
 
-        this.setSlug();
+        // this.setSlug();
     }
 
     setSlug(){

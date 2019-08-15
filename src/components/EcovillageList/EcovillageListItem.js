@@ -8,7 +8,7 @@ class EcovillageListItem extends React.Component {
                 <img src={this.props.ecovillage.picture} alt=""/>
                 <div>
                     <h3>{this.props.ecovillage.name}</h3>
-                    {this.props.ecovillage.city}, {this.props.ecovillage.country}
+                    {this.props.ecovillage.country}, {this.props.ecovillage.continent}
                 </div>
             </Link>
         );

@@ -1,6 +1,7 @@
 [
   {
     "name": "1st Amazon Ecovillage | Guayana Peace Trail Project",
+    "slug": "1st-amazon-ecovillage-guayana-peace-trail-project",
     "website": "https://ekobius.org/",
     "cellphone_service": true,
     "internet": true,
@@ -48,6 +49,7 @@
   },
   {
     "name": "8th Life Panama Ecovillage Project",
+    "slug": "8th-life-panama-ecovillage-project",
     "website": "http://8thLifePanama.org",
     "cellphone_service": true,
     "internet": true,
@@ -95,6 +97,7 @@
   },
   {
     "name": "A Caballos de las Estrellas Intelligent Living Community",
+    "slug": "a-caballos-de-las-estrellas-intelligent-living-community",
     "website": "http://caballosdelasestrellas.com",
     "cellphone_service": true,
     "internet": true,
@@ -142,6 +145,7 @@
   },
   {
     "name": "Agape Community",
+    "slug": "agape-community",
     "website": "https://agapecommunity.org/",
     "cellphone_service": false,
     "internet": true,
@@ -189,6 +193,7 @@
   },
   {
     "name": "Alderleaf Wilderness College and Farm",
+    "slug": "alderleaf-wilderness-college-and-farm",
     "website": "http://www.wildernesscollege.com",
     "cellphone_service": true,
     "internet": true,
@@ -236,6 +241,7 @@
   },
   {
     "name": "Alentejo Community Portugal",
+    "slug": "alentejo-community-portugal",
     "website": "https://project-community.weebly.com/",
     "cellphone_service": true,
     "internet": true,
@@ -283,6 +289,7 @@
   },
   {
     "name": "Aletheia Springs",
+    "slug": "aletheia-springs",
     "website": "http://www.aletheiasprings.com",
     "cellphone_service": false,
     "internet": true,
@@ -330,6 +337,7 @@
   },
   {
     "name": "Altair EcoVillage",
+    "slug": "altair-ecoVillage",
     "website": "http://www.altairecovillage.org/",
     "cellphone_service": true,
     "internet": true,
@@ -377,6 +385,7 @@
   },
   {
     "name": "Asheville Mountain Meadows",
+    "slug": "asheville-mountain-meadows",
     "website": "http://ashevillemountainmeadows.com",
     "cellphone_service": true,
     "internet": true,
@@ -424,6 +433,7 @@
   },
   {
     "name": "Awaawaroa Bay Eco-Village",
+    "slug": "awaawaroa-bay-eco-village",
     "website": "http://www.awaawaroa.org",
     "cellphone_service": false,
     "internet": true,
@@ -471,6 +481,7 @@
   },
   {
     "name": "BCollective",
+    "slug": "bcollective",
     "website": "http://www.bcollective.org",
     "cellphone_service": true,
     "internet": true,
@@ -518,6 +529,7 @@
   },
   {
     "name": "Belfast Cohousing & Ecovillage",
+    "slug": "belfast-cohousing-ecovillage",
     "website": "http://mainecohousing.org",
     "cellphone_service": true,
     "internet": true,
@@ -565,6 +577,7 @@
   },
   {
     "name": "Bellbunya Community Association",
+    "slug": "bellbunya-community-ssociation",
     "website": "http://www.bellbunya.org.au",
     "cellphone_service": true,
     "internet": true,
@@ -612,6 +625,7 @@
   },
   {
     "name": "Better In Belize Eco Village",
+    "slug": "better-in-belize-eco-village",
     "website": "http://www.BetterInBelize.com",
     "cellphone_service": false,
     "internet": true,
@@ -659,6 +673,7 @@
   },
   {
     "name": "Beyond Vitality",
+    "slug": "beyond-vitality",
     "website": "http://beyondvitality.com",
     "cellphone_service": true,
     "internet": true,
@@ -706,6 +721,7 @@
   },
   {
     "name": "Bhrugu Aranya Ecovillage",
+    "slug": "bhrugu-aranya-ecovillage",
     "website": "http://www.homatherapypoland.org",
     "cellphone_service": true,
     "internet": true,
@@ -753,6 +769,7 @@
   },
   {
     "name": "Braziers Park (School of Social and Integrative Research)",
+    "slug": "braziers-park-school-of-social-and-integrative-research",
     "website": "http://www.braziers.org.uk",
     "cellphone_service": true,
     "internet": true,
@@ -800,6 +817,7 @@
   },
   {
     "name": "Broomgrass",
+    "slug": "broomgrass",
     "website": "http://broomgrass.com",
     "cellphone_service": true,
     "internet": true,
@@ -847,6 +865,7 @@
   },
   {
     "name": "Buenavida Intentional Community",
+    "slug": "buenavida-intentional-community",
     "website": "https://buenavidaic.com/",
     "cellphone_service": true,
     "internet": true,
@@ -894,6 +913,7 @@
   },
   {
     "name": "Rogue River Ecovillage Resort",
+    "slug": "rogue-river-ecovillage-resort",
     "website": "https://www.rogueriverecovillage.com/",
     "cellphone_service": true,
     "internet": true,

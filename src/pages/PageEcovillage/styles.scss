@@ -1,0 +1,29 @@
+@import "../../variables";
+
+// main{
+//     white-space: pre-wrap;
+// }
+
+pre{
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.badge{
+    border-radius: 15px;
+    font-size: 12px;
+    margin-right: 10px;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.badge-success{
+    background-color: green;
+    color: white;
+}
+
+.badge-secondary{
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+}
