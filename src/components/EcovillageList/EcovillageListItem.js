@@ -5,7 +5,9 @@ class EcovillageListItem extends React.Component {
     render(){
         return (
             <Link to={"/" + this.props.ecovillage.slug}>
-                <img src={this.props.ecovillage.picture} alt=""/>
+                <figure>
+                    <img src={this.props.ecovillage.picture} alt=""/>
+                </figure>
                 <div>
                     <h3>{this.props.ecovillage.name}</h3>
                     {this.props.ecovillage.country}, {this.props.ecovillage.continent}

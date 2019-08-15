@@ -24,4 +24,22 @@
             }
         }
     }
+
+    figure {
+        padding: 0;
+        margin: 0 0 $gap/2;
+        height: 300px;
+
+        img  {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-tablet) {
+    .grid-items {
+        grid-template-columns: repeat(1, 100%);
+    }
 }

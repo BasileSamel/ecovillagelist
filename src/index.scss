@@ -509,12 +509,6 @@ footer {
             max-width: none;
         }
     }
-
-    main {
-        .grid-items {
-            grid-template-columns: repeat(1, 100%);
-        }
-    }
 }
 
 @media (max-width: $breakpoint-mobile) {
