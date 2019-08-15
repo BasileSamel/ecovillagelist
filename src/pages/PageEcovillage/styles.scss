@@ -1,9 +1,5 @@
 @import "../../variables";
 
-// main{
-//     white-space: pre-wrap;
-// }
-
 pre{
     white-space: pre-wrap;
     word-break: break-word;
@@ -13,17 +9,15 @@ pre{
     border-radius: 15px;
     font-size: 12px;
     margin-right: 10px;
-    padding: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 5px 10px;
 }
 
 .badge-success{
-    background-color: green;
-    color: white;
+    background-color: $c-green;
+    color: $c-bg;
 }
 
 .badge-secondary{
-    background-color: rgba(0,0,0,0.5);
-    color: white;
+    background-color: $c-bg-dark;
+    color: $c-green;
 }

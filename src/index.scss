@@ -89,6 +89,14 @@ blockquote  {
     }
 }
 
+pre {
+    font-family: $font;
+    color: $c-text;
+    font-size: $font-size;
+    line-height: $line-height;
+    white-space: pre-wrap;
+}
+
 ::placeholder {
     opacity: 1;
     color: $c-text;
@@ -325,6 +333,10 @@ aside {
                     border-bottom: 1px dashed $c-border;
                     padding-bottom: $gap/2;
             }
+
+                ul  {
+                    padding-left: 1rem;
+                }
         }
 
         .toggle {
@@ -348,7 +360,7 @@ aside {
             margin-top: $gap/4;
         }
 
-        h4, option:first-of-type {
+        h3, h4, option:first-of-type {
             margin: 0 0 $gap/4;
             padding: 0;
             text-transform: uppercase;

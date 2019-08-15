@@ -75,7 +75,7 @@ class PageEcovillage extends React.Component {
                                     {current_ecovillage.shared_housing && <li>Shared Housing</li>}
                                     {current_ecovillage.building_lots && <li>Building Lots</li>}
                                     {current_ecovillage.camping && <li>Camping</li>}
-                                    <hr/>
+
                                     {current_ecovillage.cellphone_service && <li>Cellphone service</li>}
                                     {current_ecovillage.internet && <li>Internet</li>}
                                     {current_ecovillage.community_farm_garden && <li>Community Farm/Garden</li>}
