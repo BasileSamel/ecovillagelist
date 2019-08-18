@@ -80,6 +80,7 @@ class FiltersPanel extends React.Component {
                     <h4>Lodging</h4>
                     <select id="selectLodging">
                         <option>Cohousing</option>
+                        <option>Shared housing</option>
                         <option>Building lots</option>
                         <option>Camping</option>
                     </select>
@@ -121,6 +122,7 @@ class FiltersPanel extends React.Component {
                         <label><input type="checkbox"/>Forming</label>
                         <label><input type="checkbox"/>Established</label>
                         <label><input type="checkbox"/>Founded in</label>
+                        //TODO double range input for founded 1960-current year
                         <label><input type="checkbox"/>Disbanded</label>
                     </div>
                 </li>
