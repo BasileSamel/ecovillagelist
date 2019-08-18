@@ -103,6 +103,7 @@ class Index extends React.Component {
                                 <h4>Lodging</h4>
                                 <select id="selectLodging">
                                     <option>Cohousing</option>
+                                    <option>Shared housing</option>
                                     <option>Building lots</option>
                                     <option>Camping</option>
                                 </select>
@@ -144,6 +145,7 @@ class Index extends React.Component {
                                     <label><input type="checkbox"/>Forming</label>
                                     <label><input type="checkbox"/>Established</label>
                                     <label><input type="checkbox"/>Founded in</label>
+                                    //TODO double range input for years 1960-current year
                                     <label><input type="checkbox"/>Disbanded</label>
                                 </div>
                             </li>
@@ -159,8 +161,8 @@ class Index extends React.Component {
                                 <h4>Built Environment</h4>
                                 <a className="toggle" href="#selectBuiltEnv">Toggle options</a>
                                 <div className="toggle-content" id="selectBuiltEnv">
-                                    <label><input type="checkbox"/>Natural Building</label>
-                                    <label><input type="checkbox"/>Green Building</label>
+                                    <label><input type="checkbox"/>Natural</label>
+                                    <label><input type="checkbox"/>Green</label>
                                 </div>
                             </li>
                         </ul>
