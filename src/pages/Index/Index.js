@@ -11,24 +11,62 @@ class Index extends React.Component {
         this.state = {
             ecovillages: this.props.ecovillages,
             filters:{
-                continent: ""
-            }
+            continent: {
+                name: "continent",
+                value: "Continent",
+                default: "Continent"
+            },
+            languages: {
+                name: "languages",
+                value: "Language",
+                default: "Language"
+            }}
         };
 
         this.selectContinent = this.selectContinent.bind(this);
+        this.selectLanguage = this.selectLanguage.bind(this);
+
+        this.applyFilters = this.applyFilters.bind(this);
     }
 
     selectContinent(e){
         const continent = e.target.value;
         let filters = this.state.filters;
-        filters.continent = continent;
-        let filtered_ecovillages = ecovillages;
-        if(continent != "Continent"){
-            filtered_ecovillages = filtered_ecovillages.filter(ecovillage => ecovillage.continent === continent);
+        filters.continent.value = continent;
+        this.setState({
+            filters: filters
+        }, this.applyFilters);
+    }
+
+    selectLanguage(e){
+        const language = e.target.value;
+        let filters = this.state.filters;
+        filters.languages.value = language;
+        this.setState({
+            filters: filters
+        }, this.applyFilters);
+    }
+
+    applyFilters(){
+        let filtered_ecovillages = ecovillages.slice(0);
+        const filters = this.state.filters;
+        for(var filter in filters){
+            if(filters[filter].value != filters[filter].default){
+                filtered_ecovillages = filtered_ecovillages.filter(
+                    ecovillage => {
+                        // console.log(filters[filter].name);
+                        const param = ecovillage[filters[filter].name];
+                        // console.log(param);
+                        if(Array.isArray(param)){
+                            return param.indexOf(filters[filter].value) != -1;
+                        } else {
+                            return param === filters[filter].value;
+                        }
+                    });
+            }
         }
         this.setState({
-            ecovillages: filtered_ecovillages,
-            filters: filters
+            ecovillages: filtered_ecovillages
         });
     }
 
@@ -49,6 +87,7 @@ class Index extends React.Component {
                     <aside>
                         <FiltersPanel
                             selectContinent={this.selectContinent}
+                            selectLanguage={this.selectLanguage}
                             filters={this.state.filters}
                         />
                     </aside>

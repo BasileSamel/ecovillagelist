@@ -6,7 +6,7 @@ class FiltersPanel extends React.Component {
             <ul id="main-filters">
                 <li>
                     <h4>Location</h4>
-                    <select id="selectContinent" onChange={this.props.selectContinent} value={this.props.filters.continent}>
+                    <select id="selectContinent" onChange={this.props.selectContinent} value={this.props.filters.continent.value}>
                         <option>Continent</option>
                         <option>Africa</option>
                         <option>Asia</option>
@@ -15,7 +15,8 @@ class FiltersPanel extends React.Component {
                         <option>North America</option>
                         <option>South America</option>
                     </select>
-                    <select id="selectCountry">
+                    {/*
+                    <select id="selectCountry" onChange={this.props.selectCountry} value={this.props.filters.country}>
                         <option>Country</option>
                         <option>Africa</option>
                         <option>Asia</option>
@@ -24,10 +25,15 @@ class FiltersPanel extends React.Component {
                         <option>North America</option>
                         <option>South America</option>
                     </select>
+                    */}
                 </li>
                 <li>
                     <h4>Demographics</h4>
-                    <select id="selectLanguage">
+
+                    <select
+                        id="selectLanguage"
+                        onChange={this.props.selectLanguage}
+                        value={this.props.filters.languages.value}>
                         <option>Language</option>
                         <option>English</option>
                         <option>French</option>
@@ -35,6 +41,8 @@ class FiltersPanel extends React.Component {
                         <option>Spanish</option>
                     </select>
 
+
+                    {/*
                     <select id="selectDiet">
                         <option>Dietary Restrictions</option>
                         <option>Omnivorous</option>
@@ -51,16 +59,21 @@ class FiltersPanel extends React.Component {
                         <option>Dairy-free</option>
                         <option>Gluten-free</option>
                     </select>
+                    */}
 
                     <label for="residents">Residents</label>
+                    {/*
                     <div className="flex v-center">
                         <input type="range" name="residents" id="residents" min="1" max="300" value="300"
                             oninput="residentsOutput.value = residents.value"/>
                         <output name="residentsOutput" id="residentsOutput">300</output>
                     </div>
+                    */}
                 </li>
                 <li>
                     <h4>Scope</h4>
+
+                    {/*
                     <select id="selectScope">
                         <option>Education</option>
                         <option>Research</option>
@@ -68,41 +81,56 @@ class FiltersPanel extends React.Component {
                         <option>Spiritual</option>
                         <option>Religious</option>
                     </select>
+                    */}
                 </li>
                 <li>
                     <h4>Landscape</h4>
+
+                    {/*
                     <label for="selectUrban"><input type="checkbox" id="selectUrban"/>Urban</label>
                     <label for="selectSemiUrban"><input type="checkbox" id="selectSemiUrban"/>Semi-urban</label>
                     <label for="selectRural"><input type="checkbox" id="selectRural"/>Rural</label>
                     <label for="selectMobile"><input type="checkbox" id="selectMobile"/>Mobile</label>
+                    */}
                 </li>
                 <li>
                     <h4>Lodging</h4>
+
+                    {/*
                     <select id="selectLodging">
                         <option>Cohousing</option>
                         <option>Shared housing</option>
                         <option>Building lots</option>
                         <option>Camping</option>
                     </select>
+                    */}
                 </li>
                 <li>
                     <h4>Open to</h4>
+
+                    {/*
                     <select id="selectOpenTo">
                         <option>Visitors</option>
                         <option>New members</option>
                         <option>Volunteers</option>
                     </select>
+                    */}
                 </li>
                 <li>
                     <h4>Resources</h4>
+
+                    {/*
                     <a className="toggle" href="#selectResources">Toggle options</a>
                     <div className="toggle-content" id="selectResources">
                         <label><input type="checkbox"/>Self or shared food production</label>
                         <label><input type="checkbox"/>Renewable energy</label>
                     </div>
+                    */}
                 </li>
                 <li>
                     <h4>Amenities</h4>
+
+                    {/*
                     <a className="toggle" href="#selectAmenities">Toggle options</a>
                     <div className="toggle-content" id="selectAmenities">
                         <label><input type="checkbox"/>Cellphone service</label>
@@ -114,9 +142,12 @@ class FiltersPanel extends React.Component {
                         <label><input type="checkbox"/>Play areas</label>
                         <label><input type="checkbox"/>Swimming pond/pool</label>
                     </div>
+                    */}
                 </li>
                 <li>
                     <h4>Status</h4>
+
+                    {/*
                     <a className="toggle" href="#selectStatus">Toggle options</a>
                     <div className="toggle-content" id="selectStatus">
                         <label><input type="checkbox"/>Forming</label>
@@ -125,22 +156,29 @@ class FiltersPanel extends React.Component {
                         //TODO double range input for founded 1960-current year
                         <label><input type="checkbox"/>Disbanded</label>
                     </div>
+                    */}
                 </li>
                 <li>
                     <h4>Governance</h4>
+
+                    {/*
                     <a className="toggle" href="#selectGovernance">Toggle options</a>
                     <div className="toggle-content" id="selectGovernance">
                         <label><input type="checkbox"/>Income-sharing</label>
                         <label><input type="checkbox"/>Self-governance</label>
                     </div>
+                    */}
                 </li>
                 <li>
                     <h4>Built Environment</h4>
+
+                    {/*
                     <a className="toggle" href="#selectBuiltEnv">Toggle options</a>
                     <div className="toggle-content" id="selectBuiltEnv">
                         <label><input type="checkbox"/>Natural Building</label>
                         <label><input type="checkbox"/>Green Building</label>
                     </div>
+                    */}
                 </li>
             </ul>
         );
