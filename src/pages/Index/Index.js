@@ -22,12 +22,17 @@ class Index extends React.Component {
                 name: "scope",
                 value: "Scope",
                 default: "Scope"
+            }, lodging:{
+                name: "lodging",
+                value: "Lodging",
+                default: "Lodging"
             }}
         };
 
         this.selectContinent = this.selectContinent.bind(this);
         this.selectLanguage = this.selectLanguage.bind(this);
         this.selectScope = this.selectScope.bind(this);
+        this.selectLodging = this.selectLodging.bind(this);
 
         this.applyFilters = this.applyFilters.bind(this);
     }
@@ -59,6 +64,15 @@ class Index extends React.Component {
         }, this.applyFilters);
     }
 
+    selectLodging(e){
+        const lodging = e.target.value;
+        let filters = this.state.filters;
+        filters.lodging.value = lodging;
+        this.setState({
+            filters: filters
+        }, this.applyFilters);
+    }
+
     applyFilters(){
         let filtered_ecovillages = ecovillages.slice(0);
         const filters = this.state.filters;
@@ -69,7 +83,8 @@ class Index extends React.Component {
                         // console.log(filters[filter].name);
 
                         let param = ecovillage[filters[filter].name];
-                        if(filters[filter].name == 'scope'){
+                        let special_params = ['scope', 'lodging'];
+                        if(special_params.includes(filters[filter].name)){
                             return ecovillage[filters[filter].value];
                         }
 
@@ -105,6 +120,7 @@ class Index extends React.Component {
                             selectContinent={this.selectContinent}
                             selectLanguage={this.selectLanguage}
                             selectScope={this.selectScope}
+                            selectLodging={this.selectLodging}
                             filters={this.state.filters}
                         />
                     </aside>

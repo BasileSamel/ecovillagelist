@@ -99,14 +99,17 @@ class FiltersPanel extends React.Component {
                 <li>
                     <h4>Lodging</h4>
 
-                    {/*
-                    <select id="selectLodging">
-                        <option>Cohousing</option>
-                        <option>Shared housing</option>
-                        <option>Building lots</option>
-                        <option>Camping</option>
+                    <select
+                        id="selectLodging"
+                        onChange={this.props.selectLodging}
+                        value={this.props.filters.lodging.value}
+                    >
+                        <option>Lodging</option>
+                        <option value="cohousing">Cohousing</option>
+                        <option value="shared_housing">Shared housing</option>
+                        <option value="building_lots">Building lots</option>
+                        <option value="camping">Camping</option>
                     </select>
-                    */}
                 </li>
                 <li>
                     <h4>Open to</h4>
