@@ -114,13 +114,17 @@ class FiltersPanel extends React.Component {
                 <li>
                     <h4>Open to</h4>
 
-                    {/*
-                    <select id="selectOpenTo">
-                        <option>Visitors</option>
-                        <option>New members</option>
-                        <option>Volunteers</option>
+                    <select
+                        id="selectOpenTo"
+                        onChange={this.props.selectOpenTo}
+                        value={this.props.filters.open_to.value}
+                    >
+                        <option>Open to</option>
+                        <option value="visitors">Visitors</option>
+                        <option value="new_members">New members</option>
+                        <option value="volunteers">Volunteers</option>
                     </select>
-                    */}
+
                 </li>
                 <li>
                     <h4>Resources</h4>

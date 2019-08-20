@@ -26,6 +26,10 @@ class Index extends React.Component {
                 name: "lodging",
                 value: "Lodging",
                 default: "Lodging"
+            }, open_to:{
+                name: "open_to",
+                value: "Open to",
+                default: "Open to"
             }}
         };
 
@@ -33,6 +37,7 @@ class Index extends React.Component {
         this.selectLanguage = this.selectLanguage.bind(this);
         this.selectScope = this.selectScope.bind(this);
         this.selectLodging = this.selectLodging.bind(this);
+        this.selectOpenTo = this.selectOpenTo.bind(this);
 
         this.applyFilters = this.applyFilters.bind(this);
     }
@@ -73,6 +78,15 @@ class Index extends React.Component {
         }, this.applyFilters);
     }
 
+    selectOpenTo(e){
+        const open_to = e.target.value;
+        let filters = this.state.filters;
+        filters.open_to.value = open_to;
+        this.setState({
+            filters: filters
+        }, this.applyFilters);
+    }
+
     applyFilters(){
         let filtered_ecovillages = ecovillages.slice(0);
         const filters = this.state.filters;
@@ -83,7 +97,7 @@ class Index extends React.Component {
                         // console.log(filters[filter].name);
 
                         let param = ecovillage[filters[filter].name];
-                        let special_params = ['scope', 'lodging'];
+                        let special_params = ['scope', 'lodging', 'open_to'];
                         if(special_params.includes(filters[filter].name)){
                             return ecovillage[filters[filter].value];
                         }
@@ -121,6 +135,7 @@ class Index extends React.Component {
                             selectLanguage={this.selectLanguage}
                             selectScope={this.selectScope}
                             selectLodging={this.selectLodging}
+                            selectOpenTo={this.selectOpenTo}
                             filters={this.state.filters}
                         />
                     </aside>
