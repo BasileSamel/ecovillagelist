@@ -10,21 +10,24 @@ class Index extends React.Component {
 
         this.state = {
             ecovillages: this.props.ecovillages,
-            filters:{
-            continent: {
+            filters:{ continent: {
                 name: "continent",
                 value: "Continent",
                 default: "Continent"
-            },
-            languages: {
+            }, languages: {
                 name: "languages",
                 value: "Language",
                 default: "Language"
+            }, scope:{
+                name: "scope",
+                value: "Scope",
+                default: "Scope"
             }}
         };
 
         this.selectContinent = this.selectContinent.bind(this);
         this.selectLanguage = this.selectLanguage.bind(this);
+        this.selectScope = this.selectScope.bind(this);
 
         this.applyFilters = this.applyFilters.bind(this);
     }
@@ -47,6 +50,15 @@ class Index extends React.Component {
         }, this.applyFilters);
     }
 
+    selectScope(e){
+        const scope = e.target.value;
+        let filters = this.state.filters;
+        filters.scope.value = scope;
+        this.setState({
+            filters: filters
+        }, this.applyFilters);
+    }
+
     applyFilters(){
         let filtered_ecovillages = ecovillages.slice(0);
         const filters = this.state.filters;
@@ -55,8 +67,12 @@ class Index extends React.Component {
                 filtered_ecovillages = filtered_ecovillages.filter(
                     ecovillage => {
                         // console.log(filters[filter].name);
-                        const param = ecovillage[filters[filter].name];
-                        // console.log(param);
+
+                        let param = ecovillage[filters[filter].name];
+                        if(filters[filter].name == 'scope'){
+                            return ecovillage[filters[filter].value];
+                        }
+
                         if(Array.isArray(param)){
                             return param.indexOf(filters[filter].value) != -1;
                         } else {
@@ -88,6 +104,7 @@ class Index extends React.Component {
                         <FiltersPanel
                             selectContinent={this.selectContinent}
                             selectLanguage={this.selectLanguage}
+                            selectScope={this.selectScope}
                             filters={this.state.filters}
                         />
                     </aside>

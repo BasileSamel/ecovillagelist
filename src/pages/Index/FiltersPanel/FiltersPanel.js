@@ -73,15 +73,18 @@ class FiltersPanel extends React.Component {
                 <li>
                     <h4>Scope</h4>
 
-                    {/*
-                    <select id="selectScope">
-                        <option>Education</option>
-                        <option>Research</option>
-                        <option>Art</option>
-                        <option>Spiritual</option>
-                        <option>Religious</option>
+                    <select id="selectScope"
+                        onChange={this.props.selectScope}
+                        value={this.props.filters.scope.value}
+                    >
+                        <option>Scope</option>
+                        <option value="education">Education</option>
+                        <option value="research">Research</option>
+                        <option value="art">Art</option>
+                        <option value="spiritual">Spiritual</option>
+                        <option value="religious">Religious</option>
                     </select>
-                    */}
+
                 </li>
                 <li>
                     <h4>Landscape</h4>
