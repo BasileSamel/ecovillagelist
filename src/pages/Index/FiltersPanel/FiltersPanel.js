@@ -89,6 +89,16 @@ class FiltersPanel extends React.Component {
                 <li>
                     <h4>Landscape</h4>
 
+                    <select id="selectLandscape"
+                        onChange={this.props.selectLandscape}
+                        value={this.props.filters.landscape.value}
+                        >
+                        <option>Landscape</option>
+                        <option value="urban">Urban</option>
+                        <option value="semi_urban">Semi-urban</option>
+                        <option value="rural">Rural</option>
+                        <option value="mobile">Mobile</option>
+                    </select>
                     {/*
                     <label for="selectUrban"><input type="checkbox" id="selectUrban"/>Urban</label>
                     <label for="selectSemiUrban"><input type="checkbox" id="selectSemiUrban"/>Semi-urban</label>

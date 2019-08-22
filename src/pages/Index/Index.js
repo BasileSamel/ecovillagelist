@@ -30,6 +30,10 @@ class Index extends React.Component {
                 name: "open_to",
                 value: "Open to",
                 default: "Open to"
+            }, landscape: {
+                name: "landscape",
+                value: 'Landscape',
+                default: 'Landscape'
             }}
         };
 
@@ -38,6 +42,7 @@ class Index extends React.Component {
         this.selectScope = this.selectScope.bind(this);
         this.selectLodging = this.selectLodging.bind(this);
         this.selectOpenTo = this.selectOpenTo.bind(this);
+        this.selectLandscape = this.selectLandscape.bind(this);
 
         this.applyFilters = this.applyFilters.bind(this);
     }
@@ -87,6 +92,15 @@ class Index extends React.Component {
         }, this.applyFilters);
     }
 
+    selectLandscape(e){
+        const landscape = e.target.value;
+        let filters = this.state.filters;
+        filters.landscape.value = landscape;
+        this.setState({
+            filters: filters
+        }, this.applyFilters);
+    }
+
     applyFilters(){
         let filtered_ecovillages = ecovillages.slice(0);
         const filters = this.state.filters;
@@ -97,7 +111,7 @@ class Index extends React.Component {
                         // console.log(filters[filter].name);
 
                         let param = ecovillage[filters[filter].name];
-                        let special_params = ['scope', 'lodging', 'open_to'];
+                        let special_params = ['scope', 'lodging', 'open_to', 'landscape'];
                         if(special_params.includes(filters[filter].name)){
                             return ecovillage[filters[filter].value];
                         }
@@ -136,6 +150,7 @@ class Index extends React.Component {
                             selectScope={this.selectScope}
                             selectLodging={this.selectLodging}
                             selectOpenTo={this.selectOpenTo}
+                            selectLandscape={this.selectLandscape}
                             filters={this.state.filters}
                         />
                     </aside>
