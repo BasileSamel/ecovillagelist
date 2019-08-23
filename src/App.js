@@ -94,7 +94,7 @@ class App extends React.Component {
                     <Route path="/:slug" component={(match) => <PageEcovillage ecovillages={this.state.ecovillages} match={match.match}/>} />
                 </Switch>
 
-                <footer className="grid">
+                <footer className="flex">
                     <div className="flex-grow">
                         Created with <span role="img" aria-label="heart">💚️</span> by <a href="https://basilesamel.com/">Basile</a>
                         <span>&middot;</span><a href="https://patriciapires.github.io/">Patricia</a>
