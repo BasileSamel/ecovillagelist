@@ -231,13 +231,21 @@ class FiltersPanel extends React.Component {
                 <li>
                     <h4>Governance</h4>
 
-                    {/*
                     <a className="toggle" href="#selectGovernance">Toggle options</a>
                     <div className="toggle-content" id="selectGovernance">
-                        <label><input type="checkbox"/>Income-sharing</label>
-                        <label><input type="checkbox"/>Self-governance</label>
+                        <label><input
+                            type="checkbox"
+                            name="income_sharing"
+                            checked={this.props.filters.governance[0].value}
+                            onChange={this.props.onGovernanceChange}
+                        />Income-sharing</label>
+                        <label><input
+                            type="checkbox"
+                            name="self_governance"
+                            checked={this.props.filters.governance[1].value}
+                            onChange={this.props.onGovernanceChange}
+                        />Self-governance</label>
                     </div>
-                    */}
                 </li>
                 <li>
                     <h4>Built Environment</h4>

@@ -48,6 +48,9 @@ class Index extends React.Component {
                     {name: 'library', value: false},
                     {name: 'play_areas', value: false},
                     {name: 'swimming_pond_pool', value: false}
+                ], governance: [
+                    {name: 'income_sharing', value: false},
+                    {name: 'self_governance', value: false}
                 ]
             }
         };
@@ -60,6 +63,7 @@ class Index extends React.Component {
         this.selectLandscape = this.selectLandscape.bind(this);
         this.selectResources = this.selectResources.bind(this);
         this.onAmenitiesChange = this.onAmenitiesChange.bind(this);
+        this.onGovernanceChange = this.onGovernanceChange.bind(this);
 
         this.applyFilters = this.applyFilters.bind(this);
     }
@@ -141,6 +145,20 @@ class Index extends React.Component {
         }, this.applyFilters);
     }
 
+    onGovernanceChange(e){
+        const name = e.target.name;
+        let filters = this.state.filters;
+        filters.governance = filters.governance.map(option => {
+            if(option.name == name){
+                option.value = !option.value;
+            }
+            return option;
+        });
+        this.setState({
+            filters: filters
+        }, this.applyFilters);
+    }
+
     applyFilters(){
         let filtered_ecovillages = ecovillages.slice(0);
         const filters = this.state.filters;
@@ -208,6 +226,7 @@ class Index extends React.Component {
                             selectLandscape={this.selectLandscape}
                             selectResources={this.selectResources}
                             onAmenitiesChange={this.onAmenitiesChange}
+                            onGovernanceChange={this.onGovernanceChange}
                             filters={this.state.filters}
                         />
                     </aside>
