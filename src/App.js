@@ -84,7 +84,7 @@ class App extends React.Component {
                     </form>
 
                     <nav>
-                        <Link to="/page">Page</Link>
+                        
                     </nav>
                 </header>
 

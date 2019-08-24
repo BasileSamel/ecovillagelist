@@ -139,12 +139,22 @@ class FiltersPanel extends React.Component {
                 <li>
                     <h4>Resources</h4>
 
-                    {/*
                     <a className="toggle" href="#selectResources">Toggle options</a>
                     <div className="toggle-content" id="selectResources">
+                    <select
+                        id="selectResources"
+                        onChange={this.props.selectResources}
+                        value={this.props.filters.resources.value}
+                    >
+                        <option>Resources</option>
+                        <option value="self_or_shared_food_production">Self or shared food production</option>
+                        <option value="renewable_energy">Renewable energy</option>
+                    </select>
+                    </div>
+
+                    {/*
                         <label><input type="checkbox"/>Self or shared food production</label>
                         <label><input type="checkbox"/>Renewable energy</label>
-                    </div>
                     */}
                 </li>
                 <li>

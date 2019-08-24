@@ -34,6 +34,10 @@ class Index extends React.Component {
                 name: "landscape",
                 value: 'Landscape',
                 default: 'Landscape'
+            }, resources: {
+                name: "resources",
+                value: "Resources",
+                default: "Resources"
             }}
         };
 
@@ -43,6 +47,7 @@ class Index extends React.Component {
         this.selectLodging = this.selectLodging.bind(this);
         this.selectOpenTo = this.selectOpenTo.bind(this);
         this.selectLandscape = this.selectLandscape.bind(this);
+        this.selectResources = this.selectResources.bind(this);
 
         this.applyFilters = this.applyFilters.bind(this);
     }
@@ -101,6 +106,15 @@ class Index extends React.Component {
         }, this.applyFilters);
     }
 
+    selectResources(e){
+        const resources = e.target.value;
+        let filters = this.state.filters;
+        filters.resources.value = resources;
+        this.setState({
+            filters: filters
+        }, this.applyFilters);
+    }
+
     applyFilters(){
         let filtered_ecovillages = ecovillages.slice(0);
         const filters = this.state.filters;
@@ -111,7 +125,7 @@ class Index extends React.Component {
                         // console.log(filters[filter].name);
 
                         let param = ecovillage[filters[filter].name];
-                        let special_params = ['scope', 'lodging', 'open_to', 'landscape'];
+                        let special_params = ['scope', 'lodging', 'open_to', 'landscape', 'resources'];
                         if(special_params.includes(filters[filter].name)){
                             return ecovillage[filters[filter].value];
                         }
@@ -151,6 +165,7 @@ class Index extends React.Component {
                             selectLodging={this.selectLodging}
                             selectOpenTo={this.selectOpenTo}
                             selectLandscape={this.selectLandscape}
+                            selectResources={this.selectResources}
                             filters={this.state.filters}
                         />
                     </aside>
