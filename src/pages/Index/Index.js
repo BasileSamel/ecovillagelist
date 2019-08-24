@@ -10,35 +10,46 @@ class Index extends React.Component {
 
         this.state = {
             ecovillages: this.props.ecovillages,
-            filters:{ continent: {
-                name: "continent",
-                value: "Continent",
-                default: "Continent"
-            }, languages: {
-                name: "languages",
-                value: "Language",
-                default: "Language"
-            }, scope:{
-                name: "scope",
-                value: "Scope",
-                default: "Scope"
-            }, lodging:{
-                name: "lodging",
-                value: "Lodging",
-                default: "Lodging"
-            }, open_to:{
-                name: "open_to",
-                value: "Open to",
-                default: "Open to"
-            }, landscape: {
-                name: "landscape",
-                value: 'Landscape',
-                default: 'Landscape'
-            }, resources: {
-                name: "resources",
-                value: "Resources",
-                default: "Resources"
-            }}
+            filters:{
+                continent: {
+                    name: "continent",
+                    value: "Continent",
+                    default: "Continent"
+                }, languages: {
+                    name: "languages",
+                    value: "Language",
+                    default: "Language"
+                }, scope:{
+                    name: "scope",
+                    value: "Scope",
+                    default: "Scope"
+                }, lodging:{
+                    name: "lodging",
+                    value: "Lodging",
+                    default: "Lodging"
+                }, open_to:{
+                    name: "open_to",
+                    value: "Open to",
+                    default: "Open to"
+                }, landscape: {
+                    name: "landscape",
+                    value: 'Landscape',
+                    default: 'Landscape'
+                }, resources: {
+                    name: "resources",
+                    value: "Resources",
+                    default: "Resources"
+                }, amenities: [
+                    {name: 'cellphone_service', value: false},
+                    {name: 'internet', value: false},
+                    {name: 'community_farm_garden', value: false},
+                    {name: 'gym_sports_facilities', value: false},
+                    {name: 'large_scale_kitchen', value: false},
+                    {name: 'library', value: false},
+                    {name: 'play_areas', value: false},
+                    {name: 'swimming_pond_pool', value: false}
+                ]
+            }
         };
 
         this.selectContinent = this.selectContinent.bind(this);
@@ -48,6 +59,7 @@ class Index extends React.Component {
         this.selectOpenTo = this.selectOpenTo.bind(this);
         this.selectLandscape = this.selectLandscape.bind(this);
         this.selectResources = this.selectResources.bind(this);
+        this.onAmenitiesChange = this.onAmenitiesChange.bind(this);
 
         this.applyFilters = this.applyFilters.bind(this);
     }
@@ -115,27 +127,56 @@ class Index extends React.Component {
         }, this.applyFilters);
     }
 
+    onAmenitiesChange(e){
+        const amenity_name = e.target.name;
+        let filters = this.state.filters;
+        filters.amenities = filters.amenities.map(amenity => {
+            if(amenity.name == amenity_name){
+                amenity.value = !amenity.value;
+            }
+            return amenity;
+        });
+        this.setState({
+            filters: filters
+        }, this.applyFilters);
+    }
+
     applyFilters(){
         let filtered_ecovillages = ecovillages.slice(0);
         const filters = this.state.filters;
         for(var filter in filters){
-            if(filters[filter].value != filters[filter].default){
-                filtered_ecovillages = filtered_ecovillages.filter(
-                    ecovillage => {
-                        // console.log(filters[filter].name);
+            const current_filter = filters[filter];
+            if(current_filter.value){
+                if(current_filter.value != current_filter.default){
+                    filtered_ecovillages = filtered_ecovillages.filter(
+                        ecovillage => {
+                            // console.log(filters[filter].name);
 
-                        let param = ecovillage[filters[filter].name];
-                        let special_params = ['scope', 'lodging', 'open_to', 'landscape', 'resources'];
-                        if(special_params.includes(filters[filter].name)){
-                            return ecovillage[filters[filter].value];
-                        }
+                            let param = ecovillage[current_filter.name];
+                            let special_params = ['scope', 'lodging', 'open_to', 'landscape', 'resources'];
+                            if(special_params.includes(current_filter.name)){
+                                return ecovillage[current_filter.value];
+                            }
+                            // let checkbox_params = ['amenities'];
+                            // if(checkbox_params.includes(filters[filter].name)){
+                            //     // return ecovillage[filters[filter].value];
+                            // }
 
-                        if(Array.isArray(param)){
-                            return param.indexOf(filters[filter].value) != -1;
-                        } else {
-                            return param === filters[filter].value;
-                        }
-                    });
+                            if(Array.isArray(param)){
+                                return param.indexOf(current_filter.value) != -1;
+                            } else {
+                                return param === current_filter.value;
+                            }
+                        });
+                    }
+            }
+            if(Array.isArray(current_filter)){
+                for(var field in current_filter){
+                    const current_field = current_filter[field];
+                    if(current_field.value){
+                        filtered_ecovillages = filtered_ecovillages.filter(ecovillage => ecovillage[current_field.name]);
+                    }
+                }
             }
         }
         this.setState({
@@ -166,6 +207,7 @@ class Index extends React.Component {
                             selectOpenTo={this.selectOpenTo}
                             selectLandscape={this.selectLandscape}
                             selectResources={this.selectResources}
+                            onAmenitiesChange={this.onAmenitiesChange}
                             filters={this.state.filters}
                         />
                     </aside>

@@ -160,19 +160,59 @@ class FiltersPanel extends React.Component {
                 <li>
                     <h4>Amenities</h4>
 
-                    {/*
+
                     <a className="toggle" href="#selectAmenities">Toggle options</a>
                     <div className="toggle-content" id="selectAmenities">
-                        <label><input type="checkbox"/>Cellphone service</label>
-                        <label><input type="checkbox"/>Internet</label>
-                        <label><input type="checkbox"/>Community farm/garden</label>
-                        <label><input type="checkbox"/>Gym/sports facilities</label>
-                        <label><input type="checkbox"/>Large scale kitchen</label>
-                        <label><input type="checkbox"/>Library</label>
-                        <label><input type="checkbox"/>Play areas</label>
-                        <label><input type="checkbox"/>Swimming pond/pool</label>
+                        <label><input
+                            type="checkbox"
+                            name="cellphone_service"
+                            checked={this.props.filters.amenities[0].value}
+                            onChange={this.props.onAmenitiesChange}
+                        />Cellphone service</label>
+                        <label><input
+                            type="checkbox"
+                            name="internet"
+                            checked={this.props.filters.amenities[1].value}
+                            onChange={this.props.onAmenitiesChange}
+                        />Internet</label>
+                        <label><input
+                            type="checkbox"
+                            name="community_farm_garden"
+                            checked={this.props.filters.amenities[2].value}
+                            onChange={this.props.onAmenitiesChange}
+                        />Community farm/garden</label>
+                        <label><input
+                            type="checkbox"
+                            name="gym_sports_facilities"
+                            checked={this.props.filters.amenities[3].value}
+                            onChange={this.props.onAmenitiesChange}
+                        />Gym/sports facilities</label>
+                        <label><input
+                            type="checkbox"
+                            name="large_scale_kitchen"
+                            checked={this.props.filters.amenities[4].value}
+                            onChange={this.props.onAmenitiesChange}
+                        />Large scale kitchen</label>
+                        <label><input
+                            type="checkbox"
+                            name="library"
+                            checked={this.props.filters.amenities[5].value}
+                            onChange={this.props.onAmenitiesChange}
+                        />Library</label>
+                        <label><input
+                            type="checkbox"
+                            name="play_areas"
+                            checked={this.props.filters.amenities[6].value}
+                            onChange={this.props.onAmenitiesChange}
+                        />Play areas</label>
+                        <label><input
+                            type="checkbox"
+                            name="swimming_pond_pool"
+                            checked={this.props.filters.amenities[7].value}
+                            onChange={this.props.onAmenitiesChange}
+                        />Swimming pond/pool</label>
                     </div>
-                    */}
+
                 </li>
                 <li>
                     <h4>Status</h4>
