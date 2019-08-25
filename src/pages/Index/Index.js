@@ -54,6 +54,10 @@ class Index extends React.Component {
                 ], built_env: [
                     {name: 'natural', value: false},
                     {name: 'green', value: false}
+                ], status: [
+                    {name: 'forming', value: false},
+                    {name: 'established', value: false},
+                    {name: 'disbanded', value: false}
                 ]
             }
         };
@@ -68,6 +72,7 @@ class Index extends React.Component {
         this.onAmenitiesChange = this.onAmenitiesChange.bind(this);
         this.onGovernanceChange = this.onGovernanceChange.bind(this);
         this.onBuiltEnvChange = this.onBuiltEnvChange.bind(this);
+        this.onStatusChange = this.onStatusChange.bind(this);
 
         this.applyFilters = this.applyFilters.bind(this);
     }
@@ -166,7 +171,21 @@ class Index extends React.Component {
     onBuiltEnvChange(e){
         const name = e.target.name;
         let filters = this.state.filters;
-        filters.governance = filters.built_env.map(option => {
+        filters.built_env = filters.built_env.map(option => {
+            if(option.name == name){
+                option.value = !option.value;
+            }
+            return option;
+        });
+        this.setState({
+            filters: filters
+        }, this.applyFilters);
+    }
+
+    onStatusChange(e){
+        const name = e.target.name;
+        let filters = this.state.filters;
+        filters.status = filters.status.map(option => {
             if(option.name == name){
                 option.value = !option.value;
             }
@@ -246,6 +265,7 @@ class Index extends React.Component {
                             onAmenitiesChange={this.onAmenitiesChange}
                             onGovernanceChange={this.onGovernanceChange}
                             onBuiltEnvChange={this.onBuiltEnvChange}
+                            onStatusChange={this.onStatusChange}
                             filters={this.state.filters}
                         />
                     </aside>

@@ -217,16 +217,31 @@ class FiltersPanel extends React.Component {
                 <li>
                     <h4>Status</h4>
 
-                    {/*
                     <a className="toggle" href="#selectStatus">Toggle options</a>
                     <div className="toggle-content" id="selectStatus">
-                        <label><input type="checkbox"/>Forming</label>
-                        <label><input type="checkbox"/>Established</label>
+                        <label><input
+                            type="checkbox"
+                            name="forming"
+                            checked={this.props.filters.status[0].value}
+                            onChange={this.props.onStatusChange}
+                        />Forming</label>
+                        <label><input
+                            type="checkbox"
+                            name="established"
+                            checked={this.props.filters.status[1].value}
+                            onChange={this.props.onStatusChange}
+                        />Established</label>
+                        {/*
                         <label><input type="checkbox"/>Founded in</label>
                         //TODO double range input for founded 1960-current year
-                        <label><input type="checkbox"/>Disbanded</label>
+                        */}
+                        <label><input
+                            type="checkbox"
+                            name="disbanded"
+                            checked={this.props.filters.status[2].value}
+                            onChange={this.props.onStatusChange}
+                        />Disbanded</label>
                     </div>
-                    */}
                 </li>
                 <li>
                     <h4>Governance</h4>
