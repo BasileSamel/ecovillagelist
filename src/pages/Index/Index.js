@@ -51,6 +51,9 @@ class Index extends React.Component {
                 ], governance: [
                     {name: 'income_sharing', value: false},
                     {name: 'self_governance', value: false}
+                ], built_env: [
+                    {name: 'natural', value: false},
+                    {name: 'green', value: false}
                 ]
             }
         };
@@ -64,6 +67,7 @@ class Index extends React.Component {
         this.selectResources = this.selectResources.bind(this);
         this.onAmenitiesChange = this.onAmenitiesChange.bind(this);
         this.onGovernanceChange = this.onGovernanceChange.bind(this);
+        this.onBuiltEnvChange = this.onBuiltEnvChange.bind(this);
 
         this.applyFilters = this.applyFilters.bind(this);
     }
@@ -159,6 +163,20 @@ class Index extends React.Component {
         }, this.applyFilters);
     }
 
+    onBuiltEnvChange(e){
+        const name = e.target.name;
+        let filters = this.state.filters;
+        filters.governance = filters.built_env.map(option => {
+            if(option.name == name){
+                option.value = !option.value;
+            }
+            return option;
+        });
+        this.setState({
+            filters: filters
+        }, this.applyFilters);
+    }
+
     applyFilters(){
         let filtered_ecovillages = ecovillages.slice(0);
         const filters = this.state.filters;
@@ -227,6 +245,7 @@ class Index extends React.Component {
                             selectResources={this.selectResources}
                             onAmenitiesChange={this.onAmenitiesChange}
                             onGovernanceChange={this.onGovernanceChange}
+                            onBuiltEnvChange={this.onBuiltEnvChange}
                             filters={this.state.filters}
                         />
                     </aside>

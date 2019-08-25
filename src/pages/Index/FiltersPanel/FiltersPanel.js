@@ -250,13 +250,23 @@ class FiltersPanel extends React.Component {
                 <li>
                     <h4>Built Environment</h4>
 
-                    {/*
+
                     <a className="toggle" href="#selectBuiltEnv">Toggle options</a>
                     <div className="toggle-content" id="selectBuiltEnv">
-                        <label><input type="checkbox"/>Natural Building</label>
-                        <label><input type="checkbox"/>Green Building</label>
+                        <label><input
+                            type="checkbox"
+                            name="natural"
+                            checked={this.props.filters.built_env[0].value}
+                            onChange={this.props.onBuiltEnvChange}
+                        />Natural Building</label>
+                        <label><input
+                            type="checkbox"
+                            name="green"
+                            checked={this.props.filters.built_env[1].value}
+                            onChange={this.props.onBuiltEnvChange}
+                        />Green Building</label>
                     </div>
-                    */}
+
                 </li>
             </ul>
         );
