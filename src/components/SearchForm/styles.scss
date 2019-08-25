@@ -1,0 +1,27 @@
+.search-form{
+    position: relative;
+
+    .search-results{
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: calc(100% - 1.6rem);
+        background-color: white;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            padding-top: 5px;
+            padding-bottom: 5px;
+
+            li {
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+    }
+}

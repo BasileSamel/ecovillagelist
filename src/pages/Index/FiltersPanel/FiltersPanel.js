@@ -61,8 +61,8 @@ class FiltersPanel extends React.Component {
                     </select>
                     */}
 
-                    <label for="residents">Residents</label>
                     {/*
+                        <label for="residents">Residents</label>
                     <div className="flex v-center">
                         <input type="range" name="residents" id="residents" min="1" max="300" value="300"
                             oninput="residentsOutput.value = residents.value"/>
