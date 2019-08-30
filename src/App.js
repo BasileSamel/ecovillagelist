@@ -152,7 +152,10 @@ class App extends React.Component {
                         <span>&middot;</span><a href="https://miguelpiedrafita.com/">Miguel</a>
                         <span>&middot;</span><a href="https://sava.io/">Alina</a>
                     </div>
-                    <div><a href="https://twitter.com/EcovillageList">Twitter</a> &mdash; <Link to="/privacy">Privacy</Link></div>
+                    <div>
+                        <a href="https://twitter.com/EcovillageList">Twitter</a>
+                        {/*&mdash; <Link to="/privacy">Privacy</Link>*/}
+                    </div>
                 </footer>
                 </Router>
             </div>
