@@ -4,16 +4,23 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Index from './pages/Index/Index';
 import Page from './pages/Page/Page';
 import PageEcovillage from './pages/PageEcovillage/PageEcovillage';
+import SearchForm from './components/SearchForm/SearchForm';
 
 class App extends React.Component {
     constructor(props){
         super(props);
 
         this.state = {
-            ecovillages: this.props.ecovillages
+            ecovillages: this.props.ecovillages,
+            search: "",
+            search_result: []
         };
 
         this.setSlug = this.setSlug.bind(this);
+        this.onSearchSubmit = this.onSearchSubmit.bind(this);
+        this.onSearchChange = this.onSearchChange.bind(this);
+        this.onSearchClick = this.onSearchClick.bind(this);
+        this.search = this.search.bind(this);
     }
 
     componentDidMount(){
@@ -63,6 +70,47 @@ class App extends React.Component {
             .replace(/-+$/, '') // Trim - from end of text
     }
 
+    onSearchSubmit(e){
+        e.preventDefault();
+        alert(JSON.stringify(this.state.ecovillages))
+    }
+
+    onSearchChange(e){
+        this.setState({
+            search: e.target.value,
+            search_result: this.search({
+                query: e.target.value
+            })
+        });
+    }
+
+    onSearchClick(e){
+        this.setState({
+            search: "",
+            search_result: []
+        });
+    }
+
+    search(request){
+        const query = request.query.toLowerCase();
+        if(query.length > 3){
+            const result = this.state.ecovillages.filter(ecovillage => ecovillage.name.toLowerCase().indexOf(query) > -1
+            );
+            return result;
+        }
+        return [];
+    }
+
+    // _debounce(func, delay){
+    //     let inDebounce
+    //     return function() {
+    //         const context = this
+    //         const args = arguments
+    //         clearTimeout(inDebounce)
+    //         inDebounce = setTimeout(() => func.apply(context, args), delay)
+    //     }
+    // }
+
     render(){
         return (
             <div id="App" className="flex columns">
@@ -78,13 +126,16 @@ class App extends React.Component {
                         <h1>Ecovillage List</h1>
                     </Link>
 
-                    <form role="search" method="get" id="searchform" action="">
-                        <input type="search"/>
-                        <input type="submit" value=""/>
-                    </form>
+                    <SearchForm
+                        onSubmit={this.onSearchSubmit}
+                        value={this.state.search}
+                        onChange={this.onSearchChange}
+                        onClick={this.onSearchClick}
+                        search_result={this.state.search_result}
+                    />
 
                     <nav>
-                        <Link to="/page">Page</Link>
+
                     </nav>
                 </header>
 

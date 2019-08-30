@@ -61,8 +61,8 @@ class FiltersPanel extends React.Component {
                     </select>
                     */}
 
-                    <label for="residents">Residents</label>
                     {/*
+                        <label for="residents">Residents</label>
                     <div className="flex v-center">
                         <input type="range" name="residents" id="residents" min="1" max="300" value="300"
                             oninput="residentsOutput.value = residents.value"/>
@@ -139,66 +139,149 @@ class FiltersPanel extends React.Component {
                 <li>
                     <h4>Resources</h4>
 
-                    {/*
                     <a className="toggle" href="#selectResources">Toggle options</a>
                     <div className="toggle-content" id="selectResources">
+                    <select
+                        id="selectResources"
+                        onChange={this.props.selectResources}
+                        value={this.props.filters.resources.value}
+                    >
+                        <option>Resources</option>
+                        <option value="self_or_shared_food_production">Self or shared food production</option>
+                        <option value="renewable_energy">Renewable energy</option>
+                    </select>
+                    </div>
+
+                    {/*
                         <label><input type="checkbox"/>Self or shared food production</label>
                         <label><input type="checkbox"/>Renewable energy</label>
-                    </div>
                     */}
                 </li>
                 <li>
                     <h4>Amenities</h4>
 
-                    {/*
+
                     <a className="toggle" href="#selectAmenities">Toggle options</a>
                     <div className="toggle-content" id="selectAmenities">
-                        <label><input type="checkbox"/>Cellphone service</label>
-                        <label><input type="checkbox"/>Internet</label>
-                        <label><input type="checkbox"/>Community farm/garden</label>
-                        <label><input type="checkbox"/>Gym/sports facilities</label>
-                        <label><input type="checkbox"/>Large scale kitchen</label>
-                        <label><input type="checkbox"/>Library</label>
-                        <label><input type="checkbox"/>Play areas</label>
-                        <label><input type="checkbox"/>Swimming pond/pool</label>
+                        <label><input
+                            type="checkbox"
+                            name="cellphone_service"
+                            checked={this.props.filters.amenities[0].value}
+                            onChange={this.props.onAmenitiesChange}
+                        />Cellphone service</label>
+                        <label><input
+                            type="checkbox"
+                            name="internet"
+                            checked={this.props.filters.amenities[1].value}
+                            onChange={this.props.onAmenitiesChange}
+                        />Internet</label>
+                        <label><input
+                            type="checkbox"
+                            name="community_farm_garden"
+                            checked={this.props.filters.amenities[2].value}
+                            onChange={this.props.onAmenitiesChange}
+                        />Community farm/garden</label>
+                        <label><input
+                            type="checkbox"
+                            name="gym_sports_facilities"
+                            checked={this.props.filters.amenities[3].value}
+                            onChange={this.props.onAmenitiesChange}
+                        />Gym/sports facilities</label>
+                        <label><input
+                            type="checkbox"
+                            name="large_scale_kitchen"
+                            checked={this.props.filters.amenities[4].value}
+                            onChange={this.props.onAmenitiesChange}
+                        />Large scale kitchen</label>
+                        <label><input
+                            type="checkbox"
+                            name="library"
+                            checked={this.props.filters.amenities[5].value}
+                            onChange={this.props.onAmenitiesChange}
+                        />Library</label>
+                        <label><input
+                            type="checkbox"
+                            name="play_areas"
+                            checked={this.props.filters.amenities[6].value}
+                            onChange={this.props.onAmenitiesChange}
+                        />Play areas</label>
+                        <label><input
+                            type="checkbox"
+                            name="swimming_pond_pool"
+                            checked={this.props.filters.amenities[7].value}
+                            onChange={this.props.onAmenitiesChange}
+                        />Swimming pond/pool</label>
                     </div>
-                    */}
+
                 </li>
                 <li>
                     <h4>Status</h4>
 
-                    {/*
                     <a className="toggle" href="#selectStatus">Toggle options</a>
                     <div className="toggle-content" id="selectStatus">
-                        <label><input type="checkbox"/>Forming</label>
-                        <label><input type="checkbox"/>Established</label>
+                        <label><input
+                            type="checkbox"
+                            name="forming"
+                            checked={this.props.filters.status[0].value}
+                            onChange={this.props.onStatusChange}
+                        />Forming</label>
+                        <label><input
+                            type="checkbox"
+                            name="established"
+                            checked={this.props.filters.status[1].value}
+                            onChange={this.props.onStatusChange}
+                        />Established</label>
+                        {/*
                         <label><input type="checkbox"/>Founded in</label>
                         //TODO double range input for founded 1960-current year
-                        <label><input type="checkbox"/>Disbanded</label>
+                        */}
+                        <label><input
+                            type="checkbox"
+                            name="disbanded"
+                            checked={this.props.filters.status[2].value}
+                            onChange={this.props.onStatusChange}
+                        />Disbanded</label>
                     </div>
-                    */}
                 </li>
                 <li>
                     <h4>Governance</h4>
 
-                    {/*
                     <a className="toggle" href="#selectGovernance">Toggle options</a>
                     <div className="toggle-content" id="selectGovernance">
-                        <label><input type="checkbox"/>Income-sharing</label>
-                        <label><input type="checkbox"/>Self-governance</label>
+                        <label><input
+                            type="checkbox"
+                            name="income_sharing"
+                            checked={this.props.filters.governance[0].value}
+                            onChange={this.props.onGovernanceChange}
+                        />Income-sharing</label>
+                        <label><input
+                            type="checkbox"
+                            name="self_governance"
+                            checked={this.props.filters.governance[1].value}
+                            onChange={this.props.onGovernanceChange}
+                        />Self-governance</label>
                     </div>
-                    */}
                 </li>
                 <li>
                     <h4>Built Environment</h4>
 
-                    {/*
+
                     <a className="toggle" href="#selectBuiltEnv">Toggle options</a>
                     <div className="toggle-content" id="selectBuiltEnv">
-                        <label><input type="checkbox"/>Natural Building</label>
-                        <label><input type="checkbox"/>Green Building</label>
+                        <label><input
+                            type="checkbox"
+                            name="natural"
+                            checked={this.props.filters.built_env[0].value}
+                            onChange={this.props.onBuiltEnvChange}
+                        />Natural Building</label>
+                        <label><input
+                            type="checkbox"
+                            name="green"
+                            checked={this.props.filters.built_env[1].value}
+                            onChange={this.props.onBuiltEnvChange}
+                        />Green Building</label>
                     </div>
-                    */}
+
                 </li>
             </ul>
         );
